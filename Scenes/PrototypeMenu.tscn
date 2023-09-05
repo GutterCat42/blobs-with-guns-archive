@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/PrototypeMenu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/title for now.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/gun for title for now.png" type="Texture" id=3]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+levelPath = "res://Scenes/Levels/"
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 1, 0.0470588, 1 )
+position = Vector2( 512, 221 )
+scale = Vector2( 12, 12 )
+texture = ExtResource( 2 )
+
+[node name="Gun" type="Sprite" parent="."]
+position = Vector2( 512, 240 )
+scale = Vector2( 12, 12 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 673.0
+margin_top = 433.0
+margin_right = 816.0
+margin_bottom = 447.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "(PRE-ALPHA)"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.335
+anchor_top = 0.763
+anchor_right = 0.66
+anchor_bottom = 0.983
+margin_left = -0.0400085
+margin_top = 0.199982
+margin_right = -221.84
+margin_bottom = -87.8
+rect_scale = Vector2( 3, 3 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 143.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="LevelDownButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "<"
+flat = true
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 24.0
+margin_right = 119.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PLAY LEVEL 1"
+flat = true
+
+[node name="LevelUpButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 123.0
+margin_right = 143.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = ">"
+flat = true
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 143.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Best score:"
+align = 1
+valign = 1
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 42.0
+margin_right = 143.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "QUIT"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LevelDownButton" to="." method="_on_LevelDownButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LevelUpButton" to="." method="_on_LevelUpButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

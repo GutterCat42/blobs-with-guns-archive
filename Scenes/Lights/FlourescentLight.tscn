@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/lampshape.png" type="Texture" id=1]
+[ext_resource path="res://Pixel Art/lights.png" type="Texture" id=2]
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 3
+frame = 2
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -7, 171 )
+texture = ExtResource( 1 )

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/BlobSpray.gd" type="Script" id=1]
+
+[node name="SmashParticles" type="CPUParticles2D"]
+emitting = false
+amount = 100
+lifetime = 2.0
+speed_scale = 2.0
+explosiveness = 0.95
+lifetime_randomness = 1.0
+local_coords = false
+spread = 20.0
+gravity = Vector2( 0, 30 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 200.0
+angular_velocity_random = 1.0
+scale_amount = 5.0
+scale_amount_random = 1.0
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
